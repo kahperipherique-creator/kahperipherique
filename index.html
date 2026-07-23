@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kahperipherique</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Charte graphique */
+        body {
+            margin: 0;
+            font-family: 'Idealist Sans', sans-serif;
+            background-color: #fff;
+            color: #000;
+        }
+
+        header {
+            background-color: #1C2341;
+            padding: 15px 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo img {
+            width: 120px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            padding: 0;
+        }
+
+        .nav-links li {
+            margin: 0 10px;
+        }
+
+        .nav-links a {
+            color: #F4C04D; /* Jaune doré */
+            text-decoration: none;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links a i {
+            margin-right: 8px;
+        }
+
+        .contact-button {
+            display: none;
+            border: 1px solid #F4C04D;
+            padding: 8px 12px;
+            border-radius: 5px;
+            margin-left: 15px;
+            cursor: pointer;
+        }
+
+        .contact-button a {
+            color: #F4C04D;
+            text-decoration: none;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+        }
+
+        .burger-menu {
+            display: none;
+            font-size: 30px;
+            cursor: pointer;
+            color: #F4C04D;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                background: #111;
+                position: absolute;
+                top: 50px;
+                left: 0;
+                width: 100%;
+                padding: 10px 0;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .burger-menu {
+                display: block;
+            }
+
+            .contact-button {
+                display: none;
+            }
+        }
+
+        @media (min-width: 769px) {
+            .contact-button {
+                display: inline-block;
+            }
+
+            .burger-menu {
+                display: none;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <!-- Logo -->
+            <div class="logo">
+                <img src="5eabf964-b198-41e0-b354-3127e931e117.jpeg" alt="Logo KahPeripherique">
+            </div>
+
+            <!-- Menu de navigation -->
+            <ul class="nav-links">
+                <li><a href="#accueil"><i class="fas fa-home"></i><strong>ACCUEIL</strong></a></li>
+                <li><a href="#services"><i class="fas fa-cogs"></i><strong>SERVICES</strong></a></li>
+                <li><a href="#promotions"><i class="fas fa-tags"></i><strong>PROMOTIONS</strong></a></li>
+                <li><a href="#apropos"><i class="fas fa-info-circle"></i><strong>À PROPOS</strong></a></li>
+            </ul>
+
+            <!-- Bouton Contact sur grands écrans -->
+            <div class="contact-button">
+                <a href="#contact">
+                    <span>Contactez-nous</span>
+                </a>
+            </div>
+
+            <!-- Menu Hamburger pour mobile -->
+            <div class="burger-menu" id="burger-menu">
+                <span>&#9776;</span>
+            </div>
+        </nav>
+    </header>
+
+    <script>
+        // Afficher/masquer le menu pour mobile
+        const burgerMenu = document.getElementById('burger-menu');
+        const navLinks = document.querySelector('.nav-links');
+
+        burgerMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
+<section id="accueil" class="hero">
+    <video autoplay muted loop id="hero-video">
+        <source src="background-video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <div class="overlay"></div>
+    <div class="welcome-container">
+        <div class="welcome active">
+            <h1 style="font-size: clamp(32px, 10vw, 100px); color: #F4C04D; margin-bottom: 0px;">
+                Kahperipherique
+            </h1>
+            <h2 style="color: #1C2341; font-size: 1.7rem; text-align: left; margin: 20px 0; max-width: 90%; line-height: 1.2;">
+                COMMUNICATION VISUELLE POUR ENTREPRISES ET PARTICULIERS
+            </h2>
+            <p style="text-align: justify; color: #FFFFFF;">
+                Kahperipherique est votre partenaire en communication visuelle, numerique et bien plus pour transmettre des messages et idées avec impact.
+            </p>
+        </div>
+    </div>
+</section>
+
+<style>
+    .hero {
+        position: relative;
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: white;
+        overflow: hidden;
+    }
+
+    #hero-video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+    }
+
+    .welcome-container {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+        z-index: 2;
+    }
+
+    .welcome {
+        width: 60%;
+        text-align: left;
+    }
+
+    .welcome h1 {
+        font-size: 4rem;
+        color: #F4C04D;
+    }
+
+    .welcome h2 {
+        font-size: 1.7rem;
+        color: #1C2341;
+    }
+
+    .welcome p {
+        color: white;
+        text-align: justify;
+    }
+
+    @media (max-width: 768px) {
+        .welcome h1 {
+            font-size: 2.5rem;
+        }
+
+        .welcome h2 {
+            font-size: 1.2rem;
+        }
+    }
+</style>
+
+<section id="a-propos" class="about-section">
+  <h2 class="about-title">Qui sommes-nous</h2>
+  
+  <div class="about-container">
+    <div class="about-image">
+      <img src="ton-image.jpg" alt="KahPeripherique">
+    </div>
+    <div class="about-text">
+      <p>
+        Kahperipherique est votre partenaire en communication visuelle basé en Lubumbashi et oeuvrant partout en Republique Democratique du Congo. 
+        Nous offrons des services de design graphique, illustration, photographie, vidéo, animation, infographie, 
+        webdesign,chartes graphique, publicité, evenementiel, marketing digital et community management pour entreprises et particuliers.
+      </p>
+      <p>
+        Nous associons compétences et créativité pour concevoir vos supports de communication.
+
+Nous sommes prêts à vous accompagner dans vos projets, qu'ils soient d'envergure ou plus modestes, afin de vous apporter des solutions adaptées à vos attentes communicationnelles et professionnelles.
+      </p>
+    </div>
+  </div>
+
+  <a href="https://wa.me/243977997048" class="cta-button" target="_blank">
+    <i class="fab fa-whatsapp" style="margin-right: 10px;"></i> Collaborer avec nous maintenant
+  </a>
+</section>
+
+<style>
+  /* Section à propos */
+  .about-section {
+    padding: 60px 20px;
+    background-color: #ffffff;
+    text-align: center;
+  }
+
+  .about-title {
+    font-size: 2.2em; /* Taille réduite */
+    color: #1C2341;
+    margin-bottom: 40px;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .about-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 40px;
+    max-width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    flex-wrap: wrap;
+  }
+
+  .about-image img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  .about-text {
+    width: 55%;
+    text-align: justify;
+    color: #1C2341;
+    font-size: 1.1em;
+    line-height: 1.7;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  /* Bouton WhatsApp */
+  .cta-button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 24px; /* hauteur réduite */
+    font-size: 18px;
+    color: white;
+    background-color: #F4C04D;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: background-color 0.3s;
+    width: 70%;
+    font-weight: 600;
+    margin-top: 30px;
+  }
+
+  .cta-button:hover {
+    background-color: #e0aa3c;
+  }
+
+  .cta-button i {
+    font-size: 20px;
+  }
+
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .about-container {
+      flex-direction: column;
+      text-align: center;
+      max-width: 90%;
+    }
+
+    .about-image {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
+    .about-text {
+      width: 100%;
+    }
+
+    .cta-button {
+      font-size: 16px;
+      width: 90%;
+    }
+  }
+</style>
+
+<!-- Font Awesome (à mettre dans le <head>) -->
+<script src="https://kit.fontawesome.com/ton_code_ici.js" crossorigin="anonymous"></script>
+
+<!-- Font Awesome (à mettre dans le <head>) -->
+<script src="https://kit.fontawesome.com/ton_code_ici.js" crossorigin="anonymous"></script>
+    
+<section id="services">
+    <h2 style="font-size: 32px; color: #1C2341; margin-bottom: 40px;">Nos Services</h2>
+    <div class="services-container" style="margin-bottom: 40px;">
+        <div style="width: 60%; margin: 0 auto;">
+            <p style="font-size: 18px; color: #1C2341; margin-bottom: 30px; text-align: justify;">
+Nous donnons vie à votre communication à travers des visuels percutants et nous proposons une gamme de services complets pour votre entreprise.
+Nous visons à renforcer votre image grâce à des créations dynamiques que vous pouvez découvrir ci-dessous.            </p>
+        </div>
+
+        <div class="services-container" style="margin-bottom: 40px;">
+            <div class="service-item" onclick="window.location.href='design.html';" style="cursor: pointer;">
+                <img src="BE471E97-7BDA-4FC9-B73A-6511A9F0A6CE.png" alt="Design graphique">
+                <h3>Design Graphique</h3>
+                <p>Création de logos, chartes graphiques, affiches, brochures et packaging sur mesure pour renforcer l'image de votre marque.</p>
+                <a href="design.html" class="more-info" style="color: #F4C04D;">En savoir plus</a>
+            </div>
+            <div class="service-item" onclick="window.location.href='illustration.html';" style="cursor: pointer;">
+                <img src="BE471E97-7BDA-4FC9-B73A-6511A9F0A6CE.png" alt="Illustration">
+                <h3>Illustration</h3>
+                <p>Conception de dessins, croquis et illustrations numériques uniques, adaptés à vos besoins visuels.</p>
+                <a href="illustration.html" class="more-info" style="color: #F4C04D;">En savoir plus</a>
+            </div>
+            <div class="service-item" onclick="window.location.href='photography.html';" style="cursor: pointer;">
+                <img src="BE471E97-7BDA-4FC9-B73A-6511A9F0A6CE.png" alt="Photographie">
+                <h3>Photographie</h3>
+                <p>Réalisation de photos professionnelles pour renforcer vos supports de communication visuelle.</p>
+                <a href="photography.html" class="more-info" style="color: #F4C04D;">En savoir plus</a>
+            </div>
+            <div class="service-item" onclick="window.location.href='video-animation.html';" style="cursor: pointer;">
+                <img src="BE471E97-7BDA-4FC9-B73A-6511A9F0A6CE.png" alt="Vidéo et animation">
+                <h3>Vidéo et Animation</h3>
+                <p>Création de vidéos et animations qui captivent votre audience et transmettent votre message de manière percutante.</p>
+                <a href="video-animation.html" class="more-info" style="color: #F4C04D;">En savoir plus</a>
+            </div>
+            <div class="service-item" onclick="window.location.href='infographics.html';" style="cursor: pointer;">
+                <img src="BE471E97-7BDA-4FC9-B73A-6511A9F0A6CE.png" alt="Infographie">
+                <h3>Infographie</h3>
+                <p>Représentation visuelle de données complexes pour une communication simplifiée et claire.</p>
+                <a href="infographics.html" class="more-info" style="color: #F4C04D;">En savoir plus</a>
+            </div>
+            <div class="service-item" onclick="window.location.href='webdesign.html';" style="cursor: pointer;">
+                <img src="BE471E97-7BDA-4FC9-B73A-6511A9F0A6CE.png" alt="Webdesign">
+                <h3>Webdesign</h3>
+                <p>Création de sites web fonctionnels et esthétiques pour une expérience en ligne mémorable.</p>
+                <a href="webdesign.html" class="more-info" style="color: #F4C04D;">En savoir plus</a>
+            </div>
+            <div class="service-item" onclick="window.location.href='signage.html';" style="cursor: pointer;">
+                <img src="BE471E97-7BDA-4FC9-B73A-6511A9F0A6CE.png" alt="Signalétique">
+                <h3>community management</h3>
+                <p>Gestion et animation de vos réseaux sociaux pour valoriser votre image de marque, fidéliser votre audience et développer votre présence numérique professionnelle.</p>
+                <a href="signage.html" class="more-info" style="color: #F4C04D;">En savoir plus</a>
+            </div>
+            <div class="service-item" onclick="window.location.href='advertising.html';" style="cursor: pointer;">
+                <img src="BE471E97-7BDA-4FC9-B73A-6511A9F0A6CE.png" alt="Publicité Visuelle">
+                <h3>Publicité Visuelle</h3>
+                <p>Création de supports publicitaires visuels : bannières web, affiches, et autres annonces pour promouvoir votre message.</p>
+                <a href="advertising.html" class="more-info" style="color: #F4C04D;">En savoir plus</a>
+            </div>
+            <div class="service-item" onclick="window.location.href='advertising.html';" style="cursor: pointer;">
+                <img src="BE471E97-7BDA-4FC9-B73A-6511A9F0A6CE.png" alt="Publicité Visuelle">
+                <h3>Evenementiel</h3>
+                <p>Assistances dans vos fetes de mariages, dotes, pre-dotes, conferences, concerts et live-streaming etc</p>
+                <a href="advertising.html" class="more-info" style="color: #F4C04D;">En savoir plus</a>
+            </div><div class="service-item" onclick="window.location.href='advertising.html';" style="cursor: pointer;">
+                <img src="BE471E97-7BDA-4FC9-B73A-6511A9F0A6CE.png" alt="Publicité Visuelle">
+                <h3>Marketing Digital</h3>
+                <p>Conception et déploiement de stratégies d'acquisition ciblées pour accroître votre notoriété, générer des opportunités commerciales et optimiser votre retour sur investissement en ligne.</p>
+                <a href="advertising.html" class="more-info" style="color: #F4C04D;">En savoir plus</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .services-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        justify-content: center;
+    }
+
+    .service-item {
+        width: 300px;
+        text-align: center;
+        padding: 15px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+    }
+
+    .service-item:hover {
+        transform: scale(1.05);
+    }
+
+    .service-item img {
+        width: 100%;
+        height: auto;
+        border-radius: 5px;
+        margin-bottom: 10px;
+    }
+
+    .service-item h3 {
+        font-size: 20px;
+        color: #1C2341;
+        margin-bottom: 10px;
+    }
+
+    .service-item p {
+        font-size: 14px;
+        color: #1C2341;
+        margin-bottom: 15px;
+    }
+
+    .service-item a {
+        font-size: 14px;
+        color: #F4C04D;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    .service-item a:hover {
+        text-decoration: underline;
+    }
+</style>
+
+<section id="promotion" style="background-color: #F4C04D; padding: 50px 0; text-align: center; color: #1C2341;">
+    <h2 style="font-size: 32px; font-weight: bold; margin-bottom: 20px;">Profitez de nos promotions exclusives !</h2>
+    <p style="font-size: 18px; margin-bottom: 40px;">Obtenez des réductions exceptionnelles sur nos services en communication visuelle. Offres limitées, contactez-nous maintenant pour en savoir plus !</p>
+    
+    <div class="promotion-items" style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap;">
+        <div class="promotion-item" style="width: 200px; padding: 20px; background-color: #fff; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); text-align: center;">
+            <i class="fa fa-percent" style="font-size: 50px; color: #1C2341; margin-bottom: 10px;"></i>
+            <h3>10% de réduction</h3>
+            <p>Sur toutes nos créations graphiques et supports visuels. Profitez-en maintenant !</p>
+        </div>
+        
+        <div class="promotion-item" style="width: 200px; padding: 20px; background-color: #fff; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); text-align: center;">
+            <i class="fa fa-video" style="font-size: 50px; color: #1C2341; margin-bottom: 10px;"></i>
+            <h3>Réduction spéciale</h3>
+            <p>Sur les packages vidéo & animation. Offres valables jusqu'à fin du mois.</p>
+        </div>
+        
+        <div class="promotion-item" style="width: 200px; padding: 20px; background-color: #fff; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); text-align: center;">
+            <i class="fa fa-laptop" style="font-size: 50px; color: #1C2341; margin-bottom: 10px;"></i>
+            <h3>Offre de lancement</h3>
+            <p>50% de réduction sur la création de sites web pour les premiers clients.</p>
+        </div>
+    </div>
+
+    <a href="https://wa.me/243977997048" style="display: inline-block; margin-top: 40px; background-color: #1C2341; color: white; padding: 15px 30px; text-decoration: none; font-weight: bold; border-radius: 8px;">
+        Contactez-nous dès maintenant
+    </a>
+</section>
+ 
+
+<section class="realisations">
+  <h2>Nos Réalisations</h2>
+  <div class="carousel" onmousedown="startDrag(event)" onmousemove="dragCarousel(event)" onmouseup="endDrag(event)" onmouseleave="endDrag(event)">
+    <div class="carousel-inner" id="carousel-inner">
+      <div class="carousel-item" onmousedown="zoomIn(event)" onmouseup="zoomOut(event)">
+        <img src="B00929EF-66E6-481D-BD5E-2B49C77D27DF.png" alt="Réalisation 1">
+        <div class="description">Réalisation 1 - Design graphique</div>
+      </div>
+      <div class="carousel-item" onmousedown="zoomIn(event)" onmouseup="zoomOut(event)">
+        <video src="background-video.mp4" controls></video>
+        <div class="description">Vidéo 1 - Publicité visuelle</div>
+      </div>
+      <div class="carousel-item" onmousedown="zoomIn(event)" onmouseup="zoomOut(event)">
+        <img src="B00929EF-66E6-481D-BD5E-2B49C77D27DF.png" alt="Réalisation 2">
+        <div class="description">Réalisation 2 - Illustration</div>
+      </div>
+      <div class="carousel-item" onmousedown="zoomIn(event)" onmouseup="zoomOut(event)">
+        <img src="B00929EF-66E6-481D-BD5E-2B49C77D27DF.png" alt="Réalisation 3">
+        <div class="description">Réalisation 3 - Affiche publicitaire</div>
+      </div>
+      <div class="carousel-item" onmousedown="zoomIn(event)" onmouseup="zoomOut(event)">
+        <video src="background-video.mp4" controls></video>
+        <div class="description">Vidéo 2 - Vidéo d'animation</div>
+      </div>
+      <div class="carousel-item" onmousedown="zoomIn(event)" onmouseup="zoomOut(event)">
+        <img src="B00929EF-66E6-481D-BD5E-2B49C77D27DF.png" alt="Réalisation 4">
+        <div class="description">Réalisation 4 - Branding</div>
+      </div>
+      <div class="carousel-item" onmousedown="zoomIn(event)" onmouseup="zoomOut(event)">
+        <img src="B00929EF-66E6-481D-BD5E-2B49C77D27DF.png" alt="Réalisation 5">
+        <div class="description">Réalisation 5 - Logo design</div>
+      </div>
+      <div class="carousel-item" onmousedown="zoomIn(event)" onmouseup="zoomOut(event)">
+        <video src="background-video.mp4" controls></video>
+        <div class="description">Vidéo 3 - Montage vidéo</div>
+      </div>
+      <div class="carousel-item" onmousedown="zoomIn(event)" onmouseup="zoomOut(event)">
+        <img src="B00929EF-66E6-481D-BD5E-2B49C77D27DF.png" alt="Réalisation 6">
+        <div class="description">Réalisation 6 - Illustration numérique</div>
+      </div>
+      <div class="carousel-item" onmousedown="zoomIn(event)" onmouseup="zoomOut(event)">
+        <img src="B00929EF-66E6-481D-BD5E-2B49C77D27DF.png" alt="Réalisation 7">
+        <div class="description">Réalisation 7 - Packaging produit</div>
+      </div>
+      <div class="carousel-item">
+        <img src="ton-image.png" alt="Titre">
+        <div class="description">Ton texte ici</div>
+       </div>
+
+    <div class="carousel-item video-local">
+       <video src="ton-fichier.mp4" controls></video>
+       <div class="description">Vidéo locale - Explication</div>
+       </div>
+
+<div class="carousel-item video-youtube" data-video-id="ID_YOUTUBE">
+  <img src="miniature.jpg" alt="Miniature vidéo YouTube">
+  <div class="description">Vidéo YouTube - Titre</div>
+</div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .realisations {
+    text-align: center;
+    background-color: fff; /* Bleu foncé */
+    padding: 50px 0;
+    color: #F4C04D;
+  }
+
+  .realisations h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #1C2341;
+  }
+
+  .carousel {
+    position: relative;
+    overflow-x: scroll;
+    width: 100%;
+    cursor: grab;
+  }
+
+  .carousel-inner {
+    display: flex;
+    gap: 40px; /* Espace entre les éléments */
+  }
+
+  .carousel-item {
+    flex: 0 0 auto;
+    width: 250px; /* Taille uniforme */
+    height: 400px; /* Taille uniforme en portrait */
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+
+  .carousel-item img,
+  .carousel-item video {
+    width: 100%;
+    height: 80%;
+    border-radius: 20px;
+  }
+.video-local video {
+  width: 100%;
+  height: 80%;
+  border-radius: 20px;
+}
+
+.video-youtube img {
+  width: 100%;
+  height: 80%;
+  border-radius: 20px;
+  object-fit: cover;
+}
+    
+  .description {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  /* Zoom sur appui long */
+  .zoomed {
+    transform: scale(1.5); /* Agrandir l'élément */
+    z-index: 10;
+  }
+
+  /* Masquer la barre de défilement */
+  .carousel::-webkit-scrollbar {
+    display: none;
+  }
+
+  .carousel {
+    scrollbar-width: none;
+  }
+
+  /* Responsivité pour petits écrans */
+  @media (max-width: 768px) {
+    .carousel-inner {
+      gap: 10px;
+    }
+
+    .carousel-item {
+      width: 200px;
+      height: 350px;
+    }
+  }
+
+  /* Responsivité pour écrans très petits */
+  @media (max-width: 480px) {
+    .carousel-inner {
+      gap: 5px;
+    }
+
+    .carousel-item {
+      width: 160px;
+      height: 300px;
+    }
+  }
+</style>
+
+<script>
+// Défilement
+let isDragging = false;
+let startX, scrollLeft;
+const carousel = document.querySelector('.carousel');
+const inner = document.getElementById('carousel-inner');
+
+function startDrag(e) {
+  isDragging = true;
+  startX = e.pageX;
+  scrollLeft = inner.scrollLeft;
+  carousel.style.cursor = 'grabbing';
+}
+
+function dragCarousel(e) {
+  if (!isDragging) return;
+  const x = e.pageX;
+  const walk = (x - startX) * 2;
+  inner.scrollLeft = scrollLeft - walk;
+}
+
+function endDrag() {
+  isDragging = false;
+  carousel.style.cursor = 'grab';
+}
+
+carousel.addEventListener('mousedown', startDrag);
+carousel.addEventListener('mousemove', dragCarousel);
+carousel.addEventListener('mouseup', endDrag);
+carousel.addEventListener('mouseleave', endDrag);
+
+// Zoom au clic
+function zoomIn(event) {
+  event.currentTarget.classList.add('zoomed');
+}
+
+function zoomOut(event) {
+  event.currentTarget.classList.remove('zoomed');
+}
+
+// Charger YouTube au clic
+document.querySelectorAll('.video-youtube').forEach(item => {
+  item.addEventListener('click', function() {
+    const videoId = this.dataset.videoId;
+    if (!videoId) return;
+    this.innerHTML = `
+      <iframe width="100%" height="80%" src="https://www.youtube.com/embed/${videoId}?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      <div class="description">${this.querySelector('.description').innerText}</div>
+    `;
+    this.classList.remove('video-youtube'); // Enlever la classe pour éviter re-clic
+  });
+});
+</script>
+
+<section class="formation-section">
+  <style>
+    .formation-section {
+      background-color: #ffffff; /* Fond blanc */
+      padding: 60px 20px;
+      font-family: 'Poppins', sans-serif;
+      color: #1C2341;
+      text-align: center;
+    }
+
+    .formation-section .section-title {
+      font-size: 36px;
+      color: #1C2341;
+      margin-bottom: 10px;
+    }
+
+    .formation-section .section-subtitle {
+      font-size: 18px;
+      color: #555;
+      margin-bottom: 40px;
+    }
+
+    .formation-section .cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .formation-section .card {
+      background-color: #2a3052; /* Cartes sombres */
+      border-radius: 12px;
+      padding: 30px 20px;
+      width: 300px;
+      transition: transform 0.3s;
+      text-align: left;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .formation-section .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .formation-section .icon {
+      margin-bottom: 20px;
+      font-size: 40px;
+      color: #F4C04D;
+    }
+
+    .formation-section .card h3 {
+      color: #F4C04D;
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    .formation-section .card p {
+      font-size: 16px;
+      color: #ccc;
+    }
+
+    .formation-section .cta-button {
+      display: inline-block;
+      margin-top: 50px;
+      padding: 15px 30px;
+      background-color: #F4C04D;
+      color: #1C2341;
+      font-weight: bold;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+
+    .formation-section .cta-button:hover {
+      background-color: #e2aa3e;
+    }
+
+    @media (max-width: 768px) {
+      .formation-section .card {
+        width: 90%;
+      }
+
+      .formation-section .section-title {
+        font-size: 28px;
+      }
+
+      .formation-section .section-subtitle {
+        font-size: 16px;
+      }
+    }
+  </style>
+
+  <div class="container">
+    <h2 class="section-title">Formations Visuelles</h2>
+    <p class="section-subtitle">Apprenez avec des experts du domaine visuel</p>
+
+    <div class="cards">
+      <div class="card">
+        <div class="icon">
+          <i class="fas fa-palette"></i>
+        </div>
+        <h3>Design Graphique</h3>
+        <p>Maîtrisez Photoshop, Illustrator, Figma et créez des visuels percutants.</p>
+      </div>
+
+      <div class="card">
+        <div class="icon">
+          <i class="fas fa-video"></i>
+        </div>
+        <h3>Vidéo & Animation</h3>
+        <p>Apprenez le montage, les effets spéciaux et l'animation pro.</p>
+      </div>
+
+      <div class="card">
+        <div class="icon">
+          <i class="fas fa-camera-retro"></i>
+        </div>
+        <h3>Photographie</h3>
+        <p>Développez votre œil artistique et votre maîtrise technique.</p>
+      </div>
+    </div>
+
+    <a class="cta-button" href="https://wa.me/243977997048" target="_blank">Réservez votre place maintenant</a>
+  </div>
+
+  <!-- Font Awesome (n’inclure qu’une fois par page) -->
+  <script src="https://kit.fontawesome.com/6f87c9d7e3.js" crossorigin="anonymous"></script>
+</section>
+
+<section id="footer">
+    <div class="footer-container">
+
+        <div class="footer-box">
+            <h3>KahPeripherique</h3>
+            <ul>
+                <li><i class="fas fa-home"></i> Accueil</li>
+                <li><i class="fas fa-info-circle"></i> À propos</li>
+                <li><i class="fas fa-cogs"></i> Services</li>
+                <li><i class="fas fa-envelope-open-text"></i> Contact</li>
+                <li><i class="fas fa-chalkboard-teacher"></i> Formation</li>
+                <li><i class="fas fa-bullhorn"></i> Promotion</li>
+            </ul>
+        </div>
+
+        <div class="footer-box">
+            <h3>Services</h3>
+            <ul>
+                <li><i class="fas fa-pencil-ruler"></i> Design Graphique</li>
+                <li><i class="fas fa-paint-brush"></i> Illustration</li>
+                <li><i class="fas fa-camera"></i> Photographie</li>
+                <li><i class="fas fa-video"></i> Vidéo & Animation</li>
+            </ul>
+        </div>
+
+        <div class="footer-box">
+            <h3>Contact</h3>
+            <ul>
+                <li><i class="fas fa-envelope"></i> kahperipherique@gmail.com</li>
+                <li><i class="fas fa-phone-alt"></i> +243 977 997 048</li>
+                <li><i class="fas fa-map-marker-alt"></i> Lubumbashi & Kolwezi, RDC</li>
+            </ul>
+        </div>
+
+        <div class="footer-box">
+            <h3>Suivez-nous</h3>
+            <ul>    <li>
+        <a href="https://www.facebook.com/profile.php?id=100063541268128" target="_blank">
+            <i class="fab fa-facebook"></i> Facebook
+        </a>
+    </li>
+    <li>
+        <a href="https://www.instagram.com/" target="_blank">
+            <i class="fab fa-instagram"></i> Instagram
+        </a>
+    </li>
+    <li>
+        <a href="https://www.linkedin.com/" target="_blank">
+            <i class="fab fa-linkedin"></i> LinkedIn
+        </a>
+    </li>
+    <li>
+        <a href="https://www.youtube.com/" target="_blank">
+            <i class="fab fa-youtube"></i> YouTube
+        </a>
+    </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer-copyright">
+        <p>&copy; 2024 KahPeripherique. Tous droits réservés.</p>
+    </div>
+</section>
+
+<style>
+    #footer {
+        padding: 50px 20px;
+        background-color: #1C2341; /* Bleu foncé */
+        color: #F4C04D; /* Jaune doré */
+        text-align: center;
+    }
+
+    .footer-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 20px;
+        max-width: 1100px;
+        margin: auto;
+        padding: 20px;
+    }
+
+    .footer-box {
+        text-align: left;
+    }
+
+    .footer-box h3 {
+        font-size: 22px;
+        font-weight: bold;
+        margin-bottom: 15px;
+        color: #F4C04D;
+    }
+
+    .footer-box ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .footer-box ul li {
+        font-size: 16px;
+        margin-bottom: 10px;
+        color: #F4C04D;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .footer-box ul li i {
+        font-size: 18px;
+        color: inherit; /* même couleur que le texte */
+    }
+
+    .footer-copyright {
+        margin-top: 30px;
+        font-size: 14px;
+        color: #F4C04D;
+    }
+
+    @media (max-width: 600px) {
+        .footer-box ul{
+            text-align: center;
+        }
+    }
+</style>
+
+<!-- N'oublie pas d’inclure Font Awesome -->
+<script src="https://kit.fontawesome.com/your-kit-id.js" crossorigin="anonymous"></script></body>
+</html>
